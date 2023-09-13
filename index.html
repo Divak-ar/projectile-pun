@@ -1,0 +1,27 @@
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+    body{
+        margin: 0;
+        background-color: black;
+    }
+</style>
+
+<div class="fixed text-green-500 text-sm ml-2 mt-1 select-none"><span>Score:</span><span id="scoreEl">0</span></div>
+
+<div class="fixed  inset-0 flex items-center justify-center bg-black" id="removeEl">
+    <div class="bg-indigo-300 w-full max-w-md p-5 text-center">
+        <h1 class="text-4xl font-bond" id="bigScoreEl">0</h1>
+        <p class="text-black-700  text-sm mb-4">Points</p>
+        <div>
+            <button class="bg-blue-700 text-white w-full py-3 rounded-full text-sm" id="startGameBtn">Start Game</button>
+        </div>
+    </div>
+</div>
+
+<canvas></canvas>
+
+<!--gsap animation library script-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" integrity="sha512-f8mwTB+Bs8a5c46DEm7HQLcJuHMBaH/UFlcgyetMqqkvTcYg4g5VXsYR71b3qC82lZytjNYvBj2pf0VekA9/FQ==" crossorigin="anonymous" referrerpolicy="no-referrer">    
+</script>
+
+<script src="index.js"></script>
