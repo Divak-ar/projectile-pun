@@ -11,6 +11,10 @@ const y = canvas.height/2;
 
 const scoreEl = document.querySelector("#scoreEl")
 const startGameBtn = document.querySelector("#startGameBtn")
+const highScoreEl = document.querySelector("#highScoreEl");
+let highScore = localStorage.getItem('projectilePunHighScore') || 0;
+
+highScoreEl.innerHTML = highScore;
 
 const removeEl = document.querySelector("#removeEl")
 const bigScoreEl = document.querySelector("#bigScoreEl")
@@ -163,7 +167,7 @@ function spawnEnemies(){
 function init(){
     clearInterval(enemySpawnInterval);
 
-    player = new Player(x , y , 12 , 'purple')
+    player = new Player(x , y , 12 , 'blue')
     projectiles = []
     enemies = []
     particles = []
@@ -213,6 +217,13 @@ function animate(){
             //stops the animation frame
             removeEl.style.display = 'flex'
             bigScoreEl.innerHTML = score
+            
+            // Add high score update logic
+            if (score > highScore) {
+                highScore = score;
+                localStorage.setItem('projectilePunHighScore', highScore);
+                highScoreEl.innerHTML = highScore;
+            }
         }
 
          // Check for projectile collisions
